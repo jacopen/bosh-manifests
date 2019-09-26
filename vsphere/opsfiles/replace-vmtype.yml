@@ -1,0 +1,45 @@
+- type: replace
+  path: /instance_groups/name=alertmanager/vm_type
+  value: micro
+- type: replace
+  path: /instance_groups/name=prometheus2/vm_type
+  value: small
+- type: replace
+  path: /instance_groups/name=database/vm_type
+  value: micro
+- type: replace
+  path: /instance_groups/name=grafana/vm_type
+  value: micro
+- type: replace
+  path: /instance_groups/name=nginx/vm_type
+  value: micro
+- type: replace
+  path: /instance_groups/name=alertmanager/networks/0
+  value: {name: "vmnetwork"}
+- type: replace
+  path: /instance_groups/name=prometheus2/networks/0
+  value: {name: "vmnetwork"}
+- type: replace
+  path: /instance_groups/name=database/networks/0
+  value: {name: "vmnetwork"}
+- type: replace
+  path: /instance_groups/name=grafana/networks/0
+  value: {name: "vmnetwork"}
+- type: replace
+  path: /instance_groups/name=nginx/networks/0
+  value: {name: "vmnetwork"}
+- type: replace
+  path: /instance_groups/name=alertmanager/azs
+  value: [main]
+- type: replace
+  path: /instance_groups/name=prometheus2/azs
+  value: [main]
+- type: replace
+  path: /instance_groups/name=database/azs
+  value: [main]
+- type: replace
+  path: /instance_groups/name=grafana/azs
+  value: [main]
+- type: replace
+  path: /instance_groups/name=nginx/azs
+  value: [main]

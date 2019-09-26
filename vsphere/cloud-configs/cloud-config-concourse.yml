@@ -1,0 +1,8 @@
+vm_types:
+- cloud_properties:
+    cpu: 2
+    disk: 150_000
+    ram: 4096
+  #    datastores:
+  #      - Synology
+  name: medium.concourse

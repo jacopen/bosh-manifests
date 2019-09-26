@@ -1,0 +1,12 @@
+[submodule "vsphere/concourse-bosh-deployment"]
+	path = vsphere/concourse-bosh-deployment
+	url = https://github.com/concourse/concourse-bosh-deployment.git
+[submodule "vsphere/vault-boshrelease"]
+	path = vsphere/vault-boshrelease
+	url = https://github.com/cloudfoundry-community/vault-boshrelease.git
+[submodule "vsphere/prometheus-boshrelease"]
+	path = vsphere/prometheus-boshrelease
+	url = https://github.com/bosh-prometheus/prometheus-boshrelease.git
+[submodule "vsphere/elastic-stack-bosh-deployment"]
+	path = vsphere/elastic-stack-bosh-deployment
+	url = https://github.com/bosh-elastic-stack/elastic-stack-bosh-deployment.git

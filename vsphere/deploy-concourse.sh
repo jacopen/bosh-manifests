@@ -1,0 +1,25 @@
+bosh deploy -d concourse concourse-bosh-deployment/cluster/concourse.yml \
+  -o opsfiles/basic-auth.yml \
+  -o concourse-bosh-deployment/cluster/operations/github-auth.yml \
+  -o concourse-bosh-deployment/cluster/operations/scale.yml \
+  -o opsfiles/replace-azs.yml \
+  -v deployment_name=concourse \
+  -v azs="main" \
+  -v network_name="vmnetwork" \
+  -v web_network_name="vmnetwork" \
+  -v web_vm_type="micro" \
+  -v db_vm_type="micro" \
+  -v worker_vm_type="medium.concourse" \
+  -v db_persistent_disk_type="10240" \
+  -v external_url="https://concourse.showks.cloudnativedays.jp" \
+  -v main_team.github_users="[jacopen]" \
+  -v main_team.github_orgs="[]" \
+  -v main_team.github_teams="[]" \
+  -v worker_instances=2 \
+  -v web_instances=1 \
+  -l concourse-bosh-deployment/versions.yml \
+  -o concourse-bosh-deployment/cluster/operations/credhub.yml \
+  -v credhub_url="https://10.9.9.102:8844" \
+  -v credhub_client_id=${CREDHUB_CLIENT_ID} \
+  -v credhub_client_secret=${CREDHUB_CLIENT_SECRET} \
+  --var-file credhub_ca_cert=ca.crt
