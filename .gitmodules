@@ -10,3 +10,6 @@
 [submodule "vsphere/elastic-stack-bosh-deployment"]
 	path = vsphere/elastic-stack-bosh-deployment
 	url = https://github.com/bosh-elastic-stack/elastic-stack-bosh-deployment.git
+[submodule "azure/concourse-bosh-deployment"]
+	path = azure/concourse-bosh-deployment
+	url = https://github.com/concourse/concourse-bosh-deployment.git

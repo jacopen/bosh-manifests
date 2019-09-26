@@ -1,0 +1,25 @@
+bosh deploy -d concourse concourse-bosh-deployment/cluster/concourse.yml \
+  -v deployment_name=concourse \
+  -o concourse-bosh-deployment/cluster/operations/basic-auth.yml \
+  -v local_user.username=${CONCOURSE_USER} \
+  -v local_user.password=${CONCOURSE_PASS} \
+  -o concourse-bosh-deployment/cluster/operations/scale.yml \
+  -v worker_instances=2 \
+  -v web_instances=2 \
+  -o concourse-bosh-deployment/cluster/operations/web-network-extension.yml \
+  -v web_network_vm_extension="concourse-lb" \
+  -o opsfiles/replace-azs.yml \
+  -v network_name="pks" \
+  -v web_network_name="pks" \
+  -v web_vm_type="Standard_F1s" \
+  -v db_vm_type="Standard_F1s" \
+  -v worker_vm_type="Standard_F1s" \
+  -v db_persistent_disk_type="10240" \
+  -v external_url="https://concourse.pks.azure.pcfjp.com" \
+  -l concourse-bosh-deployment/versions.yml \
+  -o concourse-bosh-deployment/cluster/operations/external-postgres.yml \
+  -v postgres_host=${POSTGRES_HOST}  \
+  -v postgres_port=5432 \
+  -v postgres_role=${POSTGRES_USER} \
+  -v postgres_password=${POSTGRES_PASSWORD} \
+  --var-file postgres_ca_cert=BaltimoreCyberTrustRoot.crt.pem

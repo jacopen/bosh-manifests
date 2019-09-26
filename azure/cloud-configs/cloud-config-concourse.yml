@@ -1,0 +1,4 @@
+vm_extensions:
+- name: concourse-lb
+  cloud_properties:
+    load_balancer: concourse-lb
