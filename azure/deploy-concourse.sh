@@ -15,9 +15,10 @@ bosh deploy -d concourse concourse-bosh-deployment/cluster/concourse.yml \
   -v db_vm_type="Standard_F1s" \
   -v worker_vm_type="Standard_F1s" \
   -v db_persistent_disk_type="10240" \
-  -v external_url="https://concourse.pks.azure.pcfjp.com" \
+  -v external_url="http://concourse.pks.azure.pcfjp.com" \
   -l concourse-bosh-deployment/versions.yml \
   -o concourse-bosh-deployment/cluster/operations/external-postgres.yml \
+  -o concourse-bosh-deployment/cluster/operations/external-postgres-tls.yml \
   -v postgres_host=${POSTGRES_HOST}  \
   -v postgres_port=5432 \
   -v postgres_role=${POSTGRES_USER} \
